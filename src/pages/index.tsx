@@ -1,14 +1,11 @@
+import { useState } from 'react'
+
+export default function Home () {
 
 
-
-
-
-import React from 'react'
-
-type Props = {}
-
-export default function index({}: Props) {
   return (
-    <>Have a Good Coding Day!</>
+    <>
+      <main className='bg-dark-layer-2 min-h-screen'></main>
+    </>
   )
 }

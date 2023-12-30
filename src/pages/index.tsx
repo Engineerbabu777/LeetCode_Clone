@@ -1,12 +1,35 @@
 import ProblemsTable from '@/components/ProblemsTable/ProblemsTable'
 import Topbar from '@/components/Topbar/Topbar'
+import { firestore } from '@/firebase/firebase'
+import { doc, setDoc } from 'firebase/firestore'
 
 import { useState } from 'react'
 
 export default function Home () {
   const [loadingProblems, setLoadingProblems] = useState(true)
- 
+  const [inputs, setInputs] = useState({
+    id:'',
+    difficulty:'',
+    videoId:'',
+    order:0,
+    likes:0,
+    dislikes:0,
+    title:'',
+    category:'',
+    link:''
+  })
 
+  const handleChangeInput = async(e:any) => {
+        setInputs({...inputs, [e.target.name]: e.target.value})
+  }
+
+  const handleSubmit = async(e:any) => {
+    e.preventDefault();
+
+    const newProb = {...inputs,order:Number(inputs.order)}
+    await setDoc(doc(firestore,'problems',inputs.id),newProb)
+    alert('save to db')
+  }
   return (
     <>
       <main className='bg-dark-layer-2 min-h-screen'>
@@ -51,6 +74,18 @@ export default function Home () {
             <ProblemsTable setLoadingProblems={setLoadingProblems} />
           </table>
         </div>
+
+        {/* TEMP TABLE! */}
+        <form className="flex flex-col p-6 max-w-sm gap-3" onSubmit={handleSubmit}>
+          <input name="id" placeholder='problem id' type='text' onChange={handleChangeInput}/>
+          <input name="title" placeholder='title' type='text' onChange={handleChangeInput}/>
+          <input name="difficulty" placeholder='difficulty' type='text' onChange={handleChangeInput}/>
+          <input name="category" placeholder='category' type='text' onChange={handleChangeInput}/>
+          <input name="order" placeholder='order' type='text' onChange={handleChangeInput}/>
+          <input name="videoId" placeholder='videoId?' type='text' onChange={handleChangeInput}/>
+          <input name="link" placeholder='link?' type='text' onChange={handleChangeInput}/>
+<button type="submit">submit</button>
+        </form>
       </main>
     </>
   )

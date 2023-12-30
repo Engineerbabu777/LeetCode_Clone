@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import PreferenceNav from "./PreferenceNav/PreferenceNav";
+import PreferenceNav from "./PreferenceNav";
 import Split from "react-split";
 import CodeMirror from "@uiw/react-codemirror";
 import { vscodeDark } from "@uiw/codemirror-theme-vscode";
@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 import { problems } from "@/utils/problems";
 import { useRouter } from "next/router";
 import { arrayUnion, doc, updateDoc } from "firebase/firestore";
-import useLocalStorage from "@/hooks/useLocalStorage";
+// import useLocalStorage from "@/hooks/useLocalStorage";
 
 type PlaygroundProps = {
 	problem: Problem;
@@ -30,10 +30,10 @@ const Playground: React.FC<PlaygroundProps> = ({ problem, setSuccess, setSolved 
 	const [activeTestCaseId, setActiveTestCaseId] = useState<number>(0);
 	let [userCode, setUserCode] = useState<string>(problem.starterCode);
 
-	const [fontSize, setFontSize] = useLocalStorage("lcc-fontSize", "16px");
+	// const [fontSize, setFontSize] = useLocalStorage("lcc-fontSize", "16px");
 
 	const [settings, setSettings] = useState<ISettings>({
-		fontSize: fontSize,
+		fontSize: '16px',
 		settingsModalIsOpen: false,
 		dropdownIsOpen: false,
 	});

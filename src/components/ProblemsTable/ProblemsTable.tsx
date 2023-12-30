@@ -8,7 +8,7 @@ import { collection, doc, getDoc, getDocs, orderBy, query } from "firebase/fires
 import { auth, firestore } from "@/firebase/firebase";
 import { DBProblem } from "@/utils/types/problem";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { problems } from "../mockProblems/mockProblems";
+// import { problems } from "../mockProblems/mockProblems";
 
 type ProblemsTableProps = {
 	setLoadingProblems: React.Dispatch<React.SetStateAction<boolean>>;
@@ -19,7 +19,7 @@ const ProblemsTable: React.FC<ProblemsTableProps> = ({ setLoadingProblems }) => 
 		isOpen: false,
 		videoId: "",
 	});
-	const problemss = useGetProblems(setLoadingProblems);
+	const problems = useGetProblems(setLoadingProblems);
 	const solvedProblems = useGetSolvedProblems();
 	console.log("solvedProblems", solvedProblems);
 	const closeModal = () => {

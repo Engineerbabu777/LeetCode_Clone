@@ -8,6 +8,7 @@ import { collection, doc, getDoc, getDocs, orderBy, query } from "firebase/fires
 import { auth, firestore } from "@/firebase/firebase";
 import { DBProblem } from "@/utils/types/problem";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { problems } from "../mockProblems/mockProblems";
 
 type ProblemsTableProps = {
 	setLoadingProblems: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,7 +19,7 @@ const ProblemsTable: React.FC<ProblemsTableProps> = ({ setLoadingProblems }) => 
 		isOpen: false,
 		videoId: "",
 	});
-	const problems = useGetProblems(setLoadingProblems);
+	const problemss = useGetProblems(setLoadingProblems);
 	const solvedProblems = useGetSolvedProblems();
 	console.log("solvedProblems", solvedProblems);
 	const closeModal = () => {
@@ -37,7 +38,7 @@ const ProblemsTable: React.FC<ProblemsTableProps> = ({ setLoadingProblems }) => 
 	return (
 		<>
 			<tbody className='text-white'>
-				{problems.map((problem, idx) => {
+				{problems?.map((problem, idx) => {
 					const difficulyColor =
 						problem.difficulty === "Easy"
 							? "text-dark-green-s"
@@ -50,9 +51,9 @@ const ProblemsTable: React.FC<ProblemsTableProps> = ({ setLoadingProblems }) => 
 								{solvedProblems.includes(problem.id) && <BsCheckCircle fontSize={"18"} width='18' />}
 							</th>
 							<td className='px-6 py-4'>
-								{problem.link ? (
+								{problem?.link ? (
 									<Link
-										href={problem.link}
+										href={problem?.link}
 										className='hover:text-blue-600 cursor-pointer'
 										target='_blank'
 									>

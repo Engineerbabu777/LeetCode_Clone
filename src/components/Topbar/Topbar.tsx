@@ -1,5 +1,5 @@
 // Importing necessary modules and components
-import { auth, uploadAllProblems } from "@/firebase/firebase"; // Importing authentication module from Firebase
+import { auth, uploadAllProblems } from "../../firebase/firebase"; // Importing authentication module from Firebase
 import Link from "next/link"; // Importing Link component from Next.js for navigation
 import React from "react"; // Importing React library
 import { useAuthState } from "react-firebase-hooks/auth"; // Importing hook for Firebase authentication

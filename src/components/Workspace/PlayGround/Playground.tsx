@@ -7,7 +7,7 @@ import { javascript } from "@codemirror/lang-javascript";
 import EditorFooter from "./EditorFooter";
 import { Problem } from "@/utils/types/problem";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, firestore } from "@/firebase/firebase";
+import { auth, firestore } from "../../../firebase/firebase";
 import { toast } from "react-toastify";
 import { problems } from "@/utils/problems";
 import { useRouter } from "next/router";

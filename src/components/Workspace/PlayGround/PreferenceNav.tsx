@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { AiOutlineFullscreen, AiOutlineFullscreenExit, AiOutlineSetting } from "react-icons/ai";
-import { ISettings } from "../Playground";
 import SettingsModal from "@/components/Modal/SettingsModal";
 
+export interface ISettings {
+	fontSize: string;
+	settingsModalIsOpen: boolean;
+	dropdownIsOpen: boolean;
+}
 type PreferenceNavProps = {
 	settings: ISettings;
 	setSettings: React.Dispatch<React.SetStateAction<ISettings>>;

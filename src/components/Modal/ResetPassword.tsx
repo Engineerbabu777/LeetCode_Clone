@@ -1,4 +1,5 @@
-import { auth } from "@/firebase/firebase";
+import { auth } from "../../firebase/firebase"; // IMPORTING THE FIREBASE AUTHENTICATION INSTANCE.
+
 import React, { useState, useEffect } from "react";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";

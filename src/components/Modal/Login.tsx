@@ -1,6 +1,6 @@
 // IMPORTING NECESSARY DEPENDENCIES AND COMPONENTS.
 import { authModalState } from "@/atom/authModalAtom"; // IMPORTING RECOIL STATE FOR MANAGING THE AUTHENTICATION MODAL STATE.
-import { auth } from "@/firebase/firebase"; // IMPORTING THE FIREBASE AUTHENTICATION INSTANCE.
+import { auth } from "../../firebase/firebase"; // IMPORTING THE FIREBASE AUTHENTICATION INSTANCE.
 import { useRouter } from "next/router"; // IMPORTING NEXT.JS ROUTER FOR NAVIGATION.
 import React, { useEffect, useState } from "react"; // IMPORTING REACT AND ITS HOOKS.
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth"; // IMPORTING FIREBASE HOOKS FOR SIGN-IN.

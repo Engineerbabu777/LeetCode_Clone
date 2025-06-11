@@ -20,11 +20,19 @@ const firestore = getFirestore(app);
 const uploadAllProblems = async () => {
   try {
     for (const [key, problem] of Object.entries(problems)) {
-      const ref = doc(firestore, "problems", key); // Use object name as doc ID
-      await setDoc(ref, problem);
-      console.log(`Uploaded problem: ${key}`);
+      const ref = doc(firestore, "problems", key);
+
+      // ✅ Destructure to exclude `handlerFunction`
+      const { handlerFunction, ...safeProblem } = problem;
+
+      // Optional: log what's being uploaded
+      console.log("Uploading:", { refPath: ref.path, safeProblem });
+
+      await setDoc(ref, safeProblem);
+
+      console.log(`✅ Uploaded problem: ${key}`);
     }
-    console.log("✅ All problems uploaded successfully!");
+    console.log("🎉 All problems uploaded successfully!");
   } catch (error) {
     console.error("❌ Error uploading problems:", error);
   }

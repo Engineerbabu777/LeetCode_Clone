@@ -1,5 +1,5 @@
 // Importing necessary modules and components
-import { auth } from "@/firebase/firebase"; // Importing authentication module from Firebase
+import { auth, uploadAllProblems } from "@/firebase/firebase"; // Importing authentication module from Firebase
 import Link from "next/link"; // Importing Link component from Next.js for navigation
 import React from "react"; // Importing React library
 import { useAuthState } from "react-firebase-hooks/auth"; // Importing hook for Firebase authentication
@@ -88,7 +88,7 @@ const Topbar: React.FC<TopbarProps> = ({ problemPage }) => {
           {/* Premium link */}
           <div>
             <a
-              href='https://www.buymeacoffee.com/burakorkmezz'
+              href='/'
               target='_blank'
               rel='noreferrer'
               className='bg-dark-fill-3 py-1.5 px-3 cursor-pointer rounded text-brand-orange hover:bg-dark-fill-2'
@@ -121,6 +121,7 @@ const Topbar: React.FC<TopbarProps> = ({ problemPage }) => {
 
           {/* Logout button for authenticated users */}
           {user && <Logout />}
+
         </div>
       </div>
     </nav>

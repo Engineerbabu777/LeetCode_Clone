@@ -41,13 +41,13 @@ export default function Home() {
           &ldquo; QUALITY OVER QUANTITY &rdquo;
         </h1>
         <div className="relative overflow-x-auto mx-auto px-6 pb-10">
-          {loadingProblems && (
+          {/* {loadingProblems && (
             <div className="max-w-[1200px] mx-auto sm:w-7/12 w-full animate-pulse">
               {[...Array(10)].map((_, idx) => (
                 <LoadingSkeleton key={idx} />
               ))}
             </div>
-          )}
+          )} */}
           <table className="text-sm text-left text-gray-500 dark:text-gray-400 sm:w-7/12 w-full max-w-[1200px] mx-auto">
             {!loadingProblems && (
               <thead className="text-xs text-gray-300 uppercase dark:text-gray-400 border-b ">

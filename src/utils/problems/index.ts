@@ -15,4 +15,6 @@ export const problems: ProblemMap = {
 	"jump-game": jumpGame,
 	"search-a-2d-matrix": search2DMatrix,
 	"valid-parentheses": validParentheses,
+	// 	"merge-intervals": mergeIntervals,
+	// "maximum-subarray": maxSubArray,
 };

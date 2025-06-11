@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react"; // IMPORTING REACT AND ITS H
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth"; // IMPORTING FIREBASE HOOKS FOR SIGN-IN.
 import { useSetRecoilState } from "recoil"; // IMPORTING RECOIL HOOK FOR SETTING STATE.
 import { toast } from "react-toastify"; // IMPORTING A TOAST NOTIFICATION LIBRARY.
-type LoginProps = {}; // DEFINING THE TYPE FOR THE LOGINPROPS.
+type LoginProps = {}; // DEFINING THE TYPE FOR THE LOGIN-PROPS.
 
 // LOGIN COMPONENT DEFINITION.
 const Login: React.FC<LoginProps> = () => {

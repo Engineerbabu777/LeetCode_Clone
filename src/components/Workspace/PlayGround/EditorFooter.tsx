@@ -4,6 +4,7 @@ import { BsChevronUp } from "react-icons/bs";
 type EditorFooterProps = {
 	handleSubmit: () => void;
 };
+// test
 
 const EditorFooter: React.FC<EditorFooterProps> = ({ handleSubmit }) => {
 	return (
